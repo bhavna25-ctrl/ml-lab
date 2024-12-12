@@ -1,0 +1,81 @@
+import statistics
+import math
+import numpy as np
+import scipy.stats as stats
+
+# Example data for the analysis
+data = [10, 20, 30, 40, 50]
+arr = np.array([1, 2, 3, 4, 5])
+
+# ------------------ Statistics Module -------------------
+# Central Tendency Measures
+mean_stat = statistics.mean(data)
+median_stat = statistics.median(data)
+try:
+    mode_stat = statistics.mode(data)
+except statistics.StatisticsError:
+    mode_stat = "No unique mode"
+
+# Dispersion Measures
+variance_stat = statistics.variance(data)
+std_deviation_stat = statistics.stdev(data)
+
+# ------------------ Math Module -------------------
+# Square Root
+sqrt_result = math.sqrt(16)
+
+# Power (Exponentiation)
+power_result = math.pow(2, 3)
+
+# Factorial
+factorial_result = math.factorial(5)
+
+# Trigonometric functions
+angle_rad = math.radians(30)  # Convert degrees to radians
+sin_result = math.sin(angle_rad)
+
+# Logarithms
+log_result = math.log(100, 10)
+
+# ------------------ NumPy Module -------------------
+# NumPy Array Operations
+arr_plus_2 = arr + 2
+arr_mult_3 = arr * 3
+
+# NumPy Mean and Standard Deviation
+mean_np = np.mean(arr)
+std_deviation_np = np.std(arr)
+
+# ------------------ SciPy Module -------------------
+# T-Test for the sample
+t_statistic, p_value = stats.ttest_1samp(data, 30)  # Test if sample mean is 30
+
+# Normal distribution (PDF & CDF)
+pdf_value = stats.norm.pdf(2, loc=5, scale=2)  # Normal distribution with mean 5, std 2
+cdf_value = stats.norm.cdf(2, loc=5, scale=2)
+
+# ------------------ Output Results -------------------
+print("-------- Statistics Module --------")
+print(f"Mean (Statistics Module): {mean_stat}")
+print(f"Median (Statistics Module): {median_stat}")
+print(f"Mode (Statistics Module): {mode_stat}")
+print(f"Variance (Statistics Module): {variance_stat}")
+print(f"Standard Deviation (Statistics Module): {std_deviation_stat}")
+
+print("\n-------- Math Module --------")
+print(f"Square Root of 16 (Math Module): {sqrt_result}")
+print(f"2^3 (Power Result) (Math Module): {power_result}")
+print(f"Factorial of 5 (Math Module): {factorial_result}")
+print(f"Sine of 30 degrees (Math Module): {sin_result}")
+print(f"Logarithm of 100 base 10 (Math Module): {log_result}")
+
+print("\n-------- NumPy Module --------")
+print(f"Array + 2 (NumPy): {arr_plus_2}")
+print(f"Array * 3 (NumPy): {arr_mult_3}")
+print(f"Mean (NumPy): {mean_np}")
+print(f"Standard Deviation (NumPy): {std_deviation_np}")
+
+print("\n-------- SciPy Module --------")
+print(f"T-statistic and P-value (SciPy T-test): {t_statistic}, {p_value}")
+print(f"PDF Value at x=2 (SciPy Normal Distribution): {pdf_value}")
+print(f"CDF Value at x=2 (SciPy Normal Distribution): {cdf_value}")
