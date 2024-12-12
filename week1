@@ -1,0 +1,26 @@
+import numpy as np
+from scipy import stats
+
+# Function to compute central tendency and dispersion measures
+def compute_statistics(data):
+    # Central Tendency Measures
+    mean = np.mean(data)
+    median = np.median(data)
+    mode = stats.mode(data)[0][0]  # Mode returns an object, we take the first element
+    
+    # Measure of Dispersion
+    variance = np.var(data)
+    std_deviation = np.std(data)
+    
+    # Print results
+    print(f"Mean: {mean}")
+    print(f"Median: {median}")
+    print(f"Mode: {mode}")
+    print(f"Variance: {variance}")
+    print(f"Standard Deviation: {std_deviation}")
+
+# Example data
+data = [12, 15, 12, 18, 20, 22, 20, 18, 15, 10]
+
+# Call the function with the example data
+compute_statistics(data)
